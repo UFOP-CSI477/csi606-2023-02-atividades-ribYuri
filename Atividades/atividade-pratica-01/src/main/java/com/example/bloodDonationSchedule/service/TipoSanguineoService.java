@@ -36,7 +36,7 @@ public class TipoSanguineoService {
         tipoSanguineo.setCreated_at(LocalDateTime.now());
         tipoSanguineo.setUpdated_at(LocalDateTime.now());
 
-        try{
+        try {
             tipoSanguineo.setId(tipoSanguineoRepository.save(tipoSanguineo).getId());
         } catch (Exception e) {
             throw new ExceptionCustom(e.getMessage(), HttpStatus.BAD_REQUEST);
@@ -66,7 +66,7 @@ public class TipoSanguineoService {
         return tipoSanguineo;
     }
 
-    private TipoSanguineo getAndVerifyBloodType(Integer id) {
+    public TipoSanguineo getAndVerifyBloodType(Integer id) {
         Optional<TipoSanguineo> tipoSanguineo = tipoSanguineoRepository.findById(id);
         if (tipoSanguineo.isEmpty()) throw new ExceptionCustom("Tipo sanguineo não existe!", HttpStatus.NOT_FOUND);
 

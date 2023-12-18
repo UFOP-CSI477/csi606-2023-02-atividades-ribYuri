@@ -49,11 +49,7 @@ public class CidadeService {
         cidade.setUpdated_at(LocalDateTime.now());
         cidade.setEstado(estado);
 
-        try {
-            cidade.setId(cidadeRepository.save(cidade).getId());
-        } catch (Exception e) {
-            throw new ExceptionCustom(e.getMessage(), HttpStatus.BAD_REQUEST);
-        }
+        saveInDatabase(cidade);
         return cidade.getId();
     }
 
@@ -65,12 +61,15 @@ public class CidadeService {
         attCidade.setId(cidadeBanco.getId());
         attCidade.setCreated_at(cidadeBanco.getCreated_at());
         attCidade.setUpdated_at(LocalDateTime.now());
+        attCidade.setEstado(cidadeBanco.getEstado());
 
         if (cidadeBanco.getEstado().getId() != cidadeDTO.getEstado_id()) {
             Estado estado = estadoService.getAndVerifyState(cidadeDTO.getEstado_id());
             attCidade.setEstado(estado);
         }
-        return cidadeRepository.save(attCidade);
+
+        saveInDatabase(attCidade);
+        return attCidade;
     }
 
     public Cidade delete(Integer id) {
@@ -83,11 +82,19 @@ public class CidadeService {
         return cidade;
     }
 
-    private Cidade getAndVerifyCity(Integer id) {
+    public Cidade getAndVerifyCity(Integer id) {
         Optional<Cidade> cidade = cidadeRepository.findById(id);
         if (cidade.isEmpty()) throw new ExceptionCustom("Cidade não existe!", HttpStatus.NOT_FOUND);
 
         return cidade.get();
+    }
+
+    private void saveInDatabase(Cidade cidade) {
+        try {
+            cidade.setId(cidadeRepository.save(cidade).getId());
+        } catch (Exception e) {
+            throw new ExceptionCustom(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
     }
 
 

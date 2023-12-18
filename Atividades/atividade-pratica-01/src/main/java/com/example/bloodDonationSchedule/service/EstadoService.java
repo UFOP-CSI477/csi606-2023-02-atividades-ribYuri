@@ -43,11 +43,7 @@ public class EstadoService {
         estado.setCreated_at(LocalDateTime.now());
         estado.setUpdated_at(LocalDateTime.now());
 
-       try{
-           estado.setId(estadoRepository.save(estado).getId());
-       } catch (Exception e) {
-           throw new ExceptionCustom(e.getMessage(), HttpStatus.BAD_REQUEST);
-       }
+        saveInDatabase(estado);
         return estado.getId();
     }
 
@@ -60,7 +56,8 @@ public class EstadoService {
         attEstado.setCreated_at(estadoBanco.getCreated_at());
         attEstado.setUpdated_at(LocalDateTime.now());
 
-        return estadoRepository.save(attEstado);
+        saveInDatabase(attEstado);
+        return attEstado;
     }
 
     public Estado delete(Integer id) {
@@ -80,5 +77,12 @@ public class EstadoService {
         return estado.get();
     }
 
+    private void saveInDatabase(Estado estado) {
+        try{
+            estado.setId(estadoRepository.save(estado).getId());
+        } catch (Exception e) {
+            throw new ExceptionCustom(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
+    }
 
 }

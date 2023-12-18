@@ -21,28 +21,28 @@ public class TipoSanguineoController {
     }
 
     @GetMapping
-    public ResponseEntity<List<TipoSanguineo>> getAllCitys() {
+    public ResponseEntity<List<TipoSanguineo>> getAllBloodTypes() {
         return ResponseEntity.ok().body(tipoSanguineoService.getAll());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<TipoSanguineo> getCityById(@PathVariable(value = "id") Integer id) {
+    public ResponseEntity<TipoSanguineo> getBloodTypeById(@PathVariable(value = "id") Integer id) {
         return ResponseEntity.ok().body(tipoSanguineoService.getById(id));
     }
 
     @PostMapping
-    public ResponseEntity<Integer> insertCity(@RequestBody @Valid TipoSanguineoDTO tipoSanguineoDTO) {
+    public ResponseEntity<Integer> insertBloodType(@RequestBody @Valid TipoSanguineoDTO tipoSanguineoDTO) {
         return ResponseEntity.status(HttpStatus.CREATED).body(tipoSanguineoService.save(tipoSanguineoDTO));
     }
 
     @PatchMapping(value = "/{id}")
-    public ResponseEntity<TipoSanguineo> updateCity(@PathVariable(value = "id") Integer id,
+    public ResponseEntity<TipoSanguineo> updateBloodType(@PathVariable(value = "id") Integer id,
                                              @RequestBody @Valid TipoSanguineoDTO tipoSanguineoDTO) {
         return ResponseEntity.ok().body(tipoSanguineoService.update(id, tipoSanguineoDTO));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<TipoSanguineo> deleteCity(@PathVariable(value = "id") Integer id) {
+    public ResponseEntity<TipoSanguineo> deleteBloodType(@PathVariable(value = "id") Integer id) {
         return ResponseEntity.ok().body(tipoSanguineoService.delete(id));
     }
 }
