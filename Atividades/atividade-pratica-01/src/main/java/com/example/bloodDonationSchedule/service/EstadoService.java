@@ -65,11 +65,15 @@ public class EstadoService {
 
     public Estado delete(Integer id) {
         Estado estado = getAndVerifyState(id);
-        estadoRepository.delete(estado);
+        try {
+            estadoRepository.delete(estado);
+        } catch (Exception e) {
+            throw new ExceptionCustom(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
         return estado;
     }
 
-    private Estado getAndVerifyState(Integer id) {
+    public Estado getAndVerifyState(Integer id) {
         Optional<Estado> estado = estadoRepository.findById(id);
         if (estado.isEmpty()) throw new ExceptionCustom("Estado não existe!", HttpStatus.NOT_FOUND);
 
