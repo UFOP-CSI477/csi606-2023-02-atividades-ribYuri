@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -63,7 +64,7 @@ public class CidadeService {
         attCidade.setUpdated_at(LocalDateTime.now());
         attCidade.setEstado(cidadeBanco.getEstado());
 
-        if (cidadeBanco.getEstado().getId() != cidadeDTO.getEstado_id()) {
+        if (!Objects.equals(cidadeBanco.getEstado().getId(), cidadeDTO.getEstado_id())) {
             Estado estado = estadoService.getAndVerifyState(cidadeDTO.getEstado_id());
             attCidade.setEstado(estado);
         }

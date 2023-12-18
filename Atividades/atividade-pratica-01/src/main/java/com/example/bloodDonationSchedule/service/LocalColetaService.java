@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -63,7 +64,7 @@ public class LocalColetaService {
         attLocalColeta.setUpdated_at(LocalDateTime.now());
         attLocalColeta.setCidade(localColetaBanco.getCidade());
 
-        if (localColetaBanco.getCidade().getId() != localColetaDTO.getCidade_id()) {
+        if (!Objects.equals(localColetaBanco.getCidade().getId(), localColetaDTO.getCidade_id())) {
             Cidade cidade = cidadeService.getAndVerifyCity(localColetaDTO.getCidade_id());
             attLocalColeta.setCidade(cidade);
         }
@@ -82,7 +83,7 @@ public class LocalColetaService {
         return localColeta;
     }
 
-    private LocalColeta getAndVerifyCollectLocal(Integer id) {
+    public LocalColeta getAndVerifyCollectLocal(Integer id) {
         Optional<LocalColeta> localColeta = localColetaRepository.findById(id);
         if (localColeta.isEmpty()) throw new ExceptionCustom("Local de coleta não existe!", HttpStatus.NOT_FOUND);
 

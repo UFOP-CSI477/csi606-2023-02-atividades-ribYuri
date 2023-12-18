@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -69,11 +70,11 @@ public class PessoaService {
         attPessoa.setCidade(pessoaBanco.getCidade());
         attPessoa.setTipoSanguineo(pessoaBanco.getTipoSanguineo());
 
-        if (pessoaBanco.getCidade().getId() != pessoaDTO.getCidade_id()) {
+        if (!Objects.equals(pessoaBanco.getCidade().getId(), pessoaDTO.getCidade_id())) {
             Cidade cidade = cidadeService.getAndVerifyCity(pessoaDTO.getCidade_id());
             attPessoa.setCidade(cidade);
         }
-        if (pessoaBanco.getTipoSanguineo().getId() != pessoaDTO.getTipoSanguineo_id()) {
+        if (!Objects.equals(pessoaBanco.getTipoSanguineo().getId(), pessoaDTO.getTipoSanguineo_id())) {
             TipoSanguineo tipoSanguineo = tipoSanguineoService.getAndVerifyBloodType(pessoaDTO.getTipoSanguineo_id());
             attPessoa.setTipoSanguineo(tipoSanguineo);
         }
@@ -92,7 +93,7 @@ public class PessoaService {
         return pessoa;
     }
 
-    private Pessoa getAndVerifyPeople(Integer id) {
+    public Pessoa getAndVerifyPeople(Integer id) {
         Optional<Pessoa> pessoa = pessoaRepository.findById(id);
         if (pessoa.isEmpty()) throw new ExceptionCustom("Pessoa não existe!", HttpStatus.NOT_FOUND);
 
