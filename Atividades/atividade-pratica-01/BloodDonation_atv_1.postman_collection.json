@@ -1,0 +1,454 @@
+{
+	"info": {
+		"_postman_id": "0e2b4234-1d71-4624-9607-06abc28f7c2a",
+		"name": "BloodDonation_atv_1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28783132"
+	},
+	"item": [
+		{
+			"name": "Estados",
+			"item": [
+				{
+					"name": "insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Minas Gerais\",\r\n    \"sigla\": \"MG\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/estados"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Minas Gerais\",\r\n    \"sigla\": \"MG\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/estados/1"
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/estados"
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/estados/3"
+					},
+					"response": []
+				},
+				{
+					"name": "get by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/estados/nome/Minas Gerais"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/estados/7"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cidades",
+			"item": [
+				{
+					"name": "insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Ipatinga\",\r\n    \"estado_id\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/cidades"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Rio de janeiro\",\r\n    \"estado_id\": \"7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/cidades/2"
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/cidades"
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/cidades/2"
+					},
+					"response": []
+				},
+				{
+					"name": "get by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/cidades/nome/Ipatinga"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/cidades/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tipos Sanguineos",
+			"item": [
+				{
+					"name": "insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo\": \"O\",\r\n    \"fator\": \"negativo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/sangue/tipos"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo\": \"O\",\r\n    \"fator\": \"positivo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/sangue/tipos/1"
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/sangue/tipos"
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/sangue/tipos/1"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/sangue/tipos/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pessoas",
+			"item": [
+				{
+					"name": "insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Joao\",\r\n    \"rua\": \"Rua 2\",\r\n    \"numero\": \"55\",\r\n    \"complemento\": \"complementado\",\r\n    \"rg\": \"mg999888778\",\r\n    \"cidade_id\": \"1\",\r\n    \"tipoSanguineo_id\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/pessoas"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Joao\",\r\n    \"rua\": \"Rua 2\",\r\n    \"numero\": \"55\",\r\n    \"complemento\": \"complementado\",\r\n    \"rg\": \"mg999888779\",\r\n    \"cidade_id\": \"1\",\r\n    \"tipoSanguineo_id\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/pessoas/4"
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/pessoas"
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/pessoas/3"
+					},
+					"response": []
+				},
+				{
+					"name": "get by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/pessoas/nome/Joao"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/pessoas/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Local Coleta",
+			"item": [
+				{
+					"name": "insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Centro de coleta\",\r\n    \"rua\": \"Rua 20\",\r\n    \"numero\": \"22\",\r\n    \"complemento\": \"Perto do hospital 1\",\r\n    \"cidade_id\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/coleta/local"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Hemominas\",\r\n    \"rua\": \"Rua 20\",\r\n    \"numero\": \"22\",\r\n    \"complemento\": \"Perto do hospital 1\",\r\n    \"cidade_id\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/coleta/local/1"
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/coleta/local"
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/coleta/local/1"
+					},
+					"response": []
+				},
+				{
+					"name": "get by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/coleta/local/nome/Hemominas"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/coleta/local/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Doacoes",
+			"item": [
+				{
+					"name": "insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pessoa_id\": \"4\",\r\n    \"localColeta_id\": \"1\",\r\n    \"data\": \"2023-12-18T00:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/doacoes"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pessoa_id\": \"4\",\r\n    \"localColeta_id\": \"1\",\r\n    \"data\": \"2023-12-19T00:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/doacoes/1"
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/doacoes"
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/doacoes/1"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/doacoes/2"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
