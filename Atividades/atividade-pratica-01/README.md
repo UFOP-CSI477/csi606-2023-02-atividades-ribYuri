@@ -1,5 +1,4 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/OP3aNSDP)
-# **Atividade 1**
+# **Atividade prática 1**
 
 ## Tecnologias utilizadas
  Para o desenvolvimento foi utilizado a linguagem JAVA versão 17 e Spring Boot na versão 
@@ -17,7 +16,7 @@ e com o nome "bloodDonation". Criando um banco com mesmo nome e porta padrão, b
 Primeiro devemos baixar clonar o projeto para a máquina. Também será necessário uma IDE que tenha suporte ao Java Spring boot
 (utilizado e recomendado [Intellij](https://www.jetbrains.com/pt-br/idea/)).
 
-Assim basta abrir o projeto e ir até o arquivo `aplication.yml` para configurar a conexão com o banco de dados, colocando
+Assim basta abrir o projeto e ir até o arquivo localizado em `src > main > resources > aplication.yml` para configurar a conexão com o banco de dados, colocando
 sua url, username e password. 
 
 Depois de configurado, basta executar o arquivo principal `BloodDonationScheduleApplication` e o servidor irá executar e 
@@ -26,5 +25,5 @@ indicar a porta no terminal. O Flyway se encarregará da criação das tabelas.
 ## Rotas e collection
 
 No repositório está disponibilizado uma collection que foi utilizada no [Postman](https://www.postman.com/) com o nome
-`BloodDonation_atv_1.postman_collection`. Basta abrir o arquivo, copiar todo o Json e então colar na área de import do
+`BloodDonation_atv_1.postman_collection.json`. Basta abrir o arquivo, copiar todo o Json e então colar na área de import do
 Postman.
