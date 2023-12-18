@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
-public class PessoaDTO {
+public class LocalColetaDTO {
     @NotNull
     private String nome;
     @NotNull
@@ -14,9 +14,5 @@ public class PessoaDTO {
     @NotNull
     private String complemento;
     @NotNull
-    private String rg;
-    @NotNull
     private Integer cidade_id;
-    @NotNull
-    private Integer tipoSanguineo_id;
 }

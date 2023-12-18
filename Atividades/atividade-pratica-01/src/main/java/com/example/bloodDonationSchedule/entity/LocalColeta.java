@@ -20,8 +20,6 @@ public class LocalColeta {
     private String numero;
     @Column
     private String complemento;
-    @Column
-    private String rg;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "cidade_id")
     private Cidade cidade;
