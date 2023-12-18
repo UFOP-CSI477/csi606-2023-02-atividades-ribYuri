@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: bloodDonation
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bloodDonation
+    username: postgres
+    password: senha
