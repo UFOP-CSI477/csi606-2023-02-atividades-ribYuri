@@ -13,7 +13,7 @@ Nele devemos criar nosso banco e configurar o usuário admin para uso. O projeto
 e com o nome "bloodDonation". Criando um banco com mesmo nome e porta padrão, basta trocar apenas o usuário e senha utilizados.
 
 ## Configurando e inicializando
-Primeiro devemos baixar clonar o projeto para a máquina. Também será necessário uma IDE que tenha suporte ao Java Spring boot
+Primeiro devemos clonar o projeto para a máquina. Também será necessário uma IDE que tenha suporte ao Java Spring boot
 (utilizado e recomendado [Intellij](https://www.jetbrains.com/pt-br/idea/)).
 
 Assim basta abrir o projeto e ir até o arquivo localizado em `src > main > resources > aplication.yml` para configurar a conexão com o banco de dados, colocando
