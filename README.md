@@ -3,11 +3,11 @@
 
 ## Atualize os seus dados
 
-- Nome:
-- Matrícula:
-- Curso:
-- Semestre/Ano correntes:
-- Link para o seu GitHub:
+- Nome: Yuri Maycon da Silva Ribeiro
+- Matrícula: 19.2.8119
+- Curso: Sistemas de Informação
+- Semestre/Ano correntes: 2023/2
+- Link para o seu GitHub: https://github.com/ribYuri
 
 ## [Projeto final:](./Projeto/README.md)
 
