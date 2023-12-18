@@ -15,6 +15,8 @@ CREATE TABLE estados
     sigla      VARCHAR,
     created_at TIMESTAMP,
     updated_at TIMESTAMP,
+    UNIQUE (nome),
+    UNIQUE (sigla),
     PRIMARY KEY (id)
 );
 
@@ -42,6 +44,7 @@ CREATE TABLE pessoas
     created_at  TIMESTAMP,
     updated_at  TIMESTAMP,
     PRIMARY KEY (id),
+    UNIQUE (rg),
     FOREIGN KEY (cidade_id) REFERENCES cidades (id),
     FOREIGN KEY (tipo_id) REFERENCES tipos_sanguineos (id)
 );
