@@ -27,6 +27,7 @@ const LocalForms = ({
       rua: "",
       numero: "",
       complemento: "",
+      cidade: cidadeSelect,
     });
   };
 
@@ -61,6 +62,7 @@ const LocalForms = ({
     getCidades()
       .then((response) => {
         setCidades(response);
+        if (editLocal != null) return;
         setCidadeSelect(response[0]);
         setCityOnLocal(response[0]);
       })
