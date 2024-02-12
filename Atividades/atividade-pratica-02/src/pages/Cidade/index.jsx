@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { postNovaDoacao, patchDoacao } from "../../services/doacao";
-import ListDoacao from "./ListDoacao";
-import DoacaoForms from "./DoacaoForms";
+import { postNovaCidade, patchCidade } from "../../services/cidade";
+import CidadeForms from "./CidadeForms";
+import ListCidade from "./ListCidade";
 
-const Doacao = () => {
+const Cidade = () => {
   const [updated, setUpdated] = useState(false);
   const [editMode, setEditMode] = useState(false);
   const [editItem, setEditItem] = useState();
@@ -12,23 +12,18 @@ const Doacao = () => {
   const changeUpdated = () => setUpdated((prev) => !prev);
 
   const saveNewItem = (novoItem) => {
-    postNovaDoacao(novoItem.pessoa.id, novoItem.localColeta.id, novoItem.data)
+    postNovaCidade(novoItem.nome, novoItem.estado.id)
       .then(() => {
-        console.log("Doação salva com sucesso!");
+        console.log("Cidade salva com sucesso!");
         changeUpdated();
       })
       .catch((error) => console.log(error.response));
   };
 
   const saveUpdatedItem = (editItem) => {
-    patchDoacao(
-      editItem.id,
-      editItem.pessoa.id,
-      editItem.localColeta.id,
-      editItem.data
-    )
+    patchCidade(editItem.id, editItem.nome, editItem.estado.id)
       .then(() => {
-        console.log("Doação atualizada com sucesso!");
+        console.log("Cidade atualizada com sucesso!");
         changeUpdated();
       })
       .catch((error) => console.log(error.response));
@@ -54,9 +49,9 @@ const Doacao = () => {
   return (
     <div className="genericContainer">
       {editMode ? (
-        <DoacaoForms
+        <CidadeForms
           handleSubmit={handleEditSubmit}
-          title={"Editando Doação"}
+          title={"Editando Cidade"}
           editCard={editItem}
           handleCancelEdit={changeEditMode}
           mode="edit"
@@ -64,15 +59,15 @@ const Doacao = () => {
         />
       ) : (
         <>
-          <DoacaoForms
+          <CidadeForms
             handleSubmit={handleSubmit}
-            title={"Cadastro de Pessoa"}
+            title={"Cadastro de Cidade"}
           />
-          <ListDoacao updated={updated} onEdit={handleEditMode} />
+          <ListCidade updated={updated} onEdit={handleEditMode} />
         </>
       )}
     </div>
   );
 };
 
-export default Doacao;
+export default Cidade;

@@ -25,7 +25,7 @@ const Pessoa = () => {
         console.log("Pessoa salva com sucesso!");
         changeUpdated();
       })
-      .catch((error) => console.log(error.response.data.message));
+      .catch((error) => console.log(error.response));
   };
 
   const saveUpdatedItem = (editItem) => {
@@ -43,7 +43,7 @@ const Pessoa = () => {
         console.log("Pessoa atualizada com sucesso!");
         changeUpdated();
       })
-      .catch((error) => console.log(error.response.data.message));
+      .catch((error) => console.log(error.response));
   };
 
   const handleEditMode = (item) => {

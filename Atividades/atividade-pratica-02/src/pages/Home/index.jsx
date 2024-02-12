@@ -7,10 +7,10 @@ const Home = () => {
       <h1>Bem vindo ao sistema de Doação de Sangue</h1>
 
       <div className="crudsContainer">
-        <NavLink to="/">
+        <NavLink to="/cadastro/estado">
           <h2 className="crudsItem">CRUD Estados</h2>
         </NavLink>
-        <NavLink to="/">
+        <NavLink to="/cadastro/cidade">
           <h2 className="crudsItem">CRUD Cidades</h2>
         </NavLink>
         <NavLink to="/cadastro/local-coleta">

@@ -1,59 +1,57 @@
 import { useState } from "react";
-import {
-  postNovoTipoSanguineo,
-  patchTipoSanguineo,
-} from "../../services/tipoSanguineo";
-import ListTipos from "./ListTipos";
-import TipoForms from "./TipoForms";
+import { postNovoEstado, patchEstado } from "../../services/estado";
+import EstadoForms from "./EstadoForms";
+import ListEstados from "./ListEstados";
 
-const TipoSanguineo = () => {
+const Estado = () => {
   const [updated, setUpdated] = useState(false);
   const [editMode, setEditMode] = useState(false);
   const [editCard, setEditCard] = useState();
 
+  const changeEditMode = () => setEditMode((prev) => !prev);
+  const changeUpdated = () => setUpdated((prev) => !prev);
+
   const saveNewItem = (newItem) => {
-    postNovoTipoSanguineo(newItem.tipo, newItem.fator)
+    postNovoEstado(newItem.nome, newItem.sigla)
       .then(() => {
-        console.log("Tipo salvo com sucesso!");
-        setUpdated((prev) => !prev);
+        console.log("Estado salvo com sucesso!");
+        changeUpdated();
       })
       .catch((error) => console.log(error.response));
   };
 
   const saveUpdatedItem = (editItem) => {
-    patchTipoSanguineo(editItem.id, editItem.tipo, editItem.fator)
+    patchEstado(editItem.id, editItem.nome, editItem.sigla)
       .then(() => {
-        console.log("Tipo atualizado com sucesso!");
-        setUpdated((prev) => !prev);
+        console.log("Estado atualizado com sucesso!");
+        changeUpdated();
       })
       .catch((error) => console.log(error.response));
   };
 
-  const changeEditMode = () => setEditMode((prev) => !prev);
-
   const handleEditMode = (editItem) => {
     setEditCard(editItem);
-    changeEditMode((prev) => !prev);
+    changeEditMode();
   };
 
   const handleSubmit = (e, newItem) => {
     e.preventDefault();
     saveNewItem(newItem);
-    setUpdated((prev) => !prev);
+    changeUpdated();
   };
 
   const handleEditSubmit = (e, editItem) => {
     e.preventDefault();
     saveUpdatedItem(editItem);
-    setEditMode((prev) => !prev);
+    changeEditMode();
   };
 
   return (
     <div className="genericContainer">
       {editMode ? (
-        <TipoForms
+        <EstadoForms
           handleSubmit={handleEditSubmit}
-          title={"Editando Tipo Sanguineo"}
+          title={"Editando Estados"}
           editCard={editCard}
           handleCancelEdit={changeEditMode}
           mode="edit"
@@ -61,15 +59,15 @@ const TipoSanguineo = () => {
         />
       ) : (
         <>
-          <TipoForms
+          <EstadoForms
             handleSubmit={handleSubmit}
-            title={"Cadastro de Tipo Sanguineo"}
+            title={"Cadastro de Estado"}
           />
-          <ListTipos updated={updated} onEdit={handleEditMode} />
+          <ListEstados updated={updated} onEdit={handleEditMode} />
         </>
       )}
     </div>
   );
 };
 
-export default TipoSanguineo;
+export default Estado;

@@ -7,6 +7,8 @@ import LocalColeta from "./pages/LocalColeta";
 import TipoSanguineo from "./pages/TipoSanguineo";
 import Pessoa from "./pages/Pessoa";
 import Doacao from "./pages/Doacao";
+import Estado from "./pages/Estados";
+import Cidade from "./pages/Cidade";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route path="/cadastro/tipo-sanguineo" element={<TipoSanguineo />} />
           <Route path="/cadastro/pessoa" element={<Pessoa />} />
           <Route path="/cadastro/doacao" element={<Doacao />} />
+          <Route path="/cadastro/estado" element={<Estado />} />
+          <Route path="/cadastro/cidade" element={<Cidade />} />
         </Routes>
       </BrowserRouter>
     </>

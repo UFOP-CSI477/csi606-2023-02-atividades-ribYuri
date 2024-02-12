@@ -13,7 +13,7 @@ const Header = () => {
             <NavLink to="/cadastro/local-coleta">Local de coleta</NavLink>
           </li>
           <li>
-            <NavLink to="/cadastro/tipo-sanguineo">Tipo sanguíeno</NavLink>
+            <NavLink to="/cadastro/tipo-sanguineo">Tipo sanguineo</NavLink>
           </li>
           <li>
             <NavLink to="/cadastro/doacao">Doação</NavLink>
