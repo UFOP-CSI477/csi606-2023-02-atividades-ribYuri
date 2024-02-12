@@ -3,7 +3,6 @@ import "./styles.scss";
 const TextInput = ({
   className,
   type = "text",
-  label,
   placeHolder,
   value,
   errorMessage,
@@ -14,8 +13,6 @@ const TextInput = ({
   const id = Math.random();
   return (
     <div className="TextInputContainer">
-      <label htmlFor=""></label>
-      <label htmlFor={`${id}`}>{label}</label>
       <input
         type={type}
         className={className}

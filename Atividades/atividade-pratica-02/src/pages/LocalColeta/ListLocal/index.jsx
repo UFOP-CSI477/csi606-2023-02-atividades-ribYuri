@@ -1,5 +1,6 @@
+import "./styles.scss";
 import { useState, useEffect } from "react";
-import CardLocal from "../CardLocal";
+import CardLocal from "./CardLocal";
 import { getLocaisColeta, deleteLocal } from "../../../services/localColeta";
 
 const ListLocal = ({ updated, onEdit }) => {
@@ -8,7 +9,7 @@ const ListLocal = ({ updated, onEdit }) => {
   const handleDelete = (id) => {
     deleteLocal(id)
       .then(() => {
-        console.log("Deletado com sucesso!");
+        console.log("Local deletado com sucesso!");
         setLocais(locais.filter((e) => e.id != id));
       })
       .catch((error) => console.log(error));
@@ -21,10 +22,10 @@ const ListLocal = ({ updated, onEdit }) => {
   }, [updated]);
 
   return (
-    <div className="locaisCadastrados">
+    <div className="genericCardContainer">
       {locais &&
         locais.map((local) => (
-          <div className="locaisItems" key={local.id}>
+          <div className="genericItems" key={local.id}>
             <CardLocal
               nome={local.nome}
               rua={local.rua}
