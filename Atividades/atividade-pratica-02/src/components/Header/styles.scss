@@ -1,0 +1,19 @@
+.container_header {
+    height: 100px;
+    background-color: aqua;
+    
+    .container_navigation {
+        height: 100%;
+        ul {
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        li {
+            list-style: none;
+        }
+
+    }
+}
