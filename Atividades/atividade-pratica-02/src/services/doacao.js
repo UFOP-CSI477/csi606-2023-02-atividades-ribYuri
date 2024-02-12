@@ -23,7 +23,7 @@ export const patchDoacao = async (id, pessoa_id, localColeta_id, data) => {
   return response.data;
 };
 
-export const deleteLocal = async (id) => {
+export const deleteDoacao = async (id) => {
   const response = await api.delete(`doacoes/${id}`);
   return response.data;
 };

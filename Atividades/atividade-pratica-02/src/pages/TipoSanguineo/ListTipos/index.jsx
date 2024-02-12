@@ -15,7 +15,7 @@ const ListTipos = ({ updated, onEdit }) => {
         console.log("Tipo deletado com sucesso!");
         setTipoSanguineo(tipoSanguineo.filter((e) => e.id != id));
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error.response.data.message));
   };
 
   useEffect(() => {

@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { patchPessoa, postNovaPessoa } from "../../services/pessoa";
-import ListPessoa from "./ListPessoa";
-import PessoaForms from "./PessoaForms";
+import { postNovaDoacao, patchDoacao } from "../../services/doacao";
+import ListDoacao from "./ListDoacao";
+import DoacaoForms from "./DoacaoForms";
 
-const Pessoa = () => {
+const Doacao = () => {
   const [updated, setUpdated] = useState(false);
   const [editMode, setEditMode] = useState(false);
   const [editItem, setEditItem] = useState();
@@ -12,35 +12,23 @@ const Pessoa = () => {
   const changeUpdated = () => setUpdated((prev) => !prev);
 
   const saveNewItem = (novoItem) => {
-    postNovaPessoa(
-      novoItem.nome,
-      novoItem.rua,
-      novoItem.numero,
-      novoItem.complemento,
-      novoItem.rg,
-      novoItem.cidade.id,
-      novoItem.tipoSanguineo.id
-    )
+    postNovaDoacao(novoItem.pessoa.id, novoItem.localColeta.id, novoItem.data)
       .then(() => {
-        console.log("Pessoa salva com sucesso!");
+        console.log("Doação salva com sucesso!");
         changeUpdated();
       })
       .catch((error) => console.log(error.response.data.message));
   };
 
   const saveUpdatedItem = (editItem) => {
-    patchPessoa(
+    patchDoacao(
       editItem.id,
-      editItem.nome,
-      editItem.rua,
-      editItem.numero,
-      editItem.complemento,
-      editItem.rg,
-      editItem.cidade.id,
-      editItem.tipoSanguineo.id
+      editItem.pessoa.id,
+      editItem.localColeta.id,
+      editItem.data
     )
       .then(() => {
-        console.log("Pessoa atualizada com sucesso!");
+        console.log("Doação atualizada com sucesso!");
         changeUpdated();
       })
       .catch((error) => console.log(error.response.data.message));
@@ -66,9 +54,9 @@ const Pessoa = () => {
   return (
     <div className="genericContainer">
       {editMode ? (
-        <PessoaForms
+        <DoacaoForms
           handleSubmit={handleEditSubmit}
-          title={"Editando Pessoa"}
+          title={"Editando Doação"}
           editCard={editItem}
           handleCancelEdit={changeEditMode}
           mode="edit"
@@ -76,15 +64,15 @@ const Pessoa = () => {
         />
       ) : (
         <>
-          <PessoaForms
+          <DoacaoForms
             handleSubmit={handleSubmit}
             title={"Cadastro de Pessoa"}
           />
-          <ListPessoa updated={updated} onEdit={handleEditMode} />
+          <ListDoacao updated={updated} onEdit={handleEditMode} />
         </>
       )}
     </div>
   );
 };
 
-export default Pessoa;
+export default Doacao;

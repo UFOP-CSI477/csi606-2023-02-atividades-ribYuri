@@ -12,7 +12,7 @@ const ListPessoa = ({ updated, onEdit }) => {
         console.log("Pessoa deletada com sucesso!");
         setPessoa(pessoa.filter((e) => e.id != id));
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error.response.data.message));
   };
 
   useEffect(() => {

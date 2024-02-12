@@ -20,7 +20,7 @@ const LocalColeta = () => {
         console.log("Local salvo com sucesso!");
         setUpdated((prev) => !prev);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error.response.data.message));
   };
 
   const saveUpdatedLocal = (editLocal) => {
@@ -36,7 +36,7 @@ const LocalColeta = () => {
         console.log("Local atualizado com sucesso!");
         setUpdated((prev) => !prev);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error.response.data.message));
   };
 
   const changeEditMode = () => setEditMode((prev) => !prev);

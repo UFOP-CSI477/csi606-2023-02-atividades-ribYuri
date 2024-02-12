@@ -12,7 +12,7 @@ const ListLocal = ({ updated, onEdit }) => {
         console.log("Local deletado com sucesso!");
         setLocais(locais.filter((e) => e.id != id));
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error.response.data.message));
   };
 
   useEffect(() => {
