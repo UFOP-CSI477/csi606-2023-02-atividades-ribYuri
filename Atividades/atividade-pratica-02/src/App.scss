@@ -1,0 +1,111 @@
+a {
+    text-decoration: none;
+}
+
+a:link, a:visited{
+    color: black;
+}
+
+.genericContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+
+    h1 {
+        padding: 30px 0px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        font-weight: bold;
+        padding: 10px 5px;
+        border: 0px;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: transparent;
+    }
+
+    .genericForms {
+        margin-top: 50px;
+        padding: 0px 10px 20px;
+        background-color: rgba(216, 216, 216, 0.075);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 1px 3px 10px #86868670;
+        border-radius: 10px;
+    }
+
+    .genericFormsInputs {
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px 5px;
+        align-items: stretch;
+    }
+
+    .addButton {
+        font-size: 16px;
+        width: 50%;
+        margin-top: 30px;
+        background-color: rgb(2, 148, 2);
+        color: white;
+    }
+
+    .editButtons {
+        margin-top: 30px;
+        display: flex;
+        gap: 30px;
+
+        button {
+            width: 125px;
+        }
+
+        .saveButton {
+            color: white;
+            background-color:  rgb(2, 148, 2);
+        }
+
+        .cancelButton {
+            color: white;
+            background-color: rgb(216, 3, 3);
+        }
+    }
+
+    .genericCardContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0px 40px;
+        gap: 20px;
+    
+        .genericItems {
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 1px 2px 7px 0px rgb(0 0 0 / 21%);
+        }
+    
+        .genericCard {
+            display: flex;
+            gap: 30px;
+            margin: 0px 30px;
+        }
+    
+        .editItensButtons {
+            display: flex;
+            gap: 40px;
+        }
+    }    
+}

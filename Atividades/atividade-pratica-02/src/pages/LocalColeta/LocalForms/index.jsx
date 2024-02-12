@@ -74,7 +74,7 @@ const LocalForms = ({
 
   return (
     <div>
-      <div className="localForms">
+      <div className="genericForms">
         <h1>{title}</h1>
         <form
           action="/"
@@ -83,19 +83,23 @@ const LocalForms = ({
             clearFields();
           }}
         >
-          <div className="formsInputs">
+          <div className="genericFormsInputs">
             <TextInput
               placeHolder={"Nome"}
+              required={true}
               value={local.nome}
               onChange={(e) => handleInputLocalChange(e.target.value, "nome")}
             />
             <TextInput
               placeHolder={"Rua"}
+              required={true}
               value={local.rua}
               onChange={(e) => handleInputLocalChange(e.target.value, "rua")}
             />
             <TextInput
               placeHolder={"Número"}
+              required={true}
+              type="number"
               value={local.numero}
               onChange={(e) => handleInputLocalChange(e.target.value, "numero")}
             />
@@ -119,22 +123,25 @@ const LocalForms = ({
               ))}
             </select>
             <TextInput
-              className={"small"}
+              divClassname={"small"}
               placeHolder={"Estado"}
               readOnly={true}
               value={cidadeSelect ? cidadeSelect.estado.sigla : "Estado"}
             />
           </div>
           {mode == "edit" ? (
-            <div className="Editbuttons">
-              <button type="submit">salvar</button>
+            <div className="editButtons">
+              <button className="saveButton" type="submit">
+                Salvar
+              </button>
               <button
+                className="cancelButton"
                 onClick={() => {
                   clearFields();
                   handleCancelEdit();
                 }}
               >
-                cancelar
+                Cancelar
               </button>
             </div>
           ) : (

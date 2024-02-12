@@ -9,10 +9,11 @@ const TextInput = ({
   onChange,
   required,
   readOnly,
+  divClassname,
 }) => {
   const id = Math.random();
   return (
-    <div className="TextInputContainer">
+    <div className={`TextInputContainer ${divClassname}`}>
       <input
         type={type}
         className={className}

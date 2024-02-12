@@ -1,7 +1,7 @@
-import "./styles.scss";
 import { useState, useEffect } from "react";
-import CardLocal from "./CardLocal";
+import GenericCard from "../../../components/GenericCard";
 import { getLocaisColeta, deleteLocal } from "../../../services/localColeta";
+import { FiEdit, FiTrash } from "react-icons/fi";
 
 const ListLocal = ({ updated, onEdit }) => {
   const [locais, setLocais] = useState();
@@ -26,17 +26,25 @@ const ListLocal = ({ updated, onEdit }) => {
       {locais &&
         locais.map((local) => (
           <div className="genericItems" key={local.id}>
-            <CardLocal
-              nome={local.nome}
-              rua={local.rua}
-              numero={local.numero}
-              complemento={local.complemento}
-              cidade={local.cidade.nome}
-              estado={local.cidade.estado.nome}
-              sigla={local.cidade.estado.sigla}
+            <GenericCard
+              campos={[
+                local.nome,
+                local.rua,
+                local.numero,
+                local.complemento,
+                local.cidade.nome,
+                local.cidade.estado.nome,
+                local.cidade.estado.sigla,
+              ]}
             />
-            <button onClick={() => onEdit(local)}>editar</button>
-            <button onClick={() => handleDelete(local.id)}>deletar</button>
+            <div className="editItensButtons">
+              <button onClick={() => onEdit(local)}>
+                <FiEdit color="blue" size={20} />
+              </button>
+              <button onClick={() => handleDelete(local.id)}>
+                <FiTrash color="red" size={20} />
+              </button>
+            </div>
           </div>
         ))}
     </div>

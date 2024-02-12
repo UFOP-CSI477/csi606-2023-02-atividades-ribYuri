@@ -1,4 +1,3 @@
-import "./styles.scss";
 import { useState } from "react";
 import { patchNovoLocal, postNovoLocal } from "../../services/localColeta";
 import ListLocal from "./ListLocal";
@@ -60,7 +59,7 @@ const LocalColeta = () => {
   };
 
   return (
-    <div className="localContainer">
+    <div className="genericContainer">
       {editMode ? (
         <LocalForms
           handleSubmit={handleEditSubmit}
