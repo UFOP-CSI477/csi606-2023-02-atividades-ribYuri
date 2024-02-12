@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Header from "./components/Header";
 import LocalColeta from "./pages/LocalColeta";
 import TipoSanguineo from "./pages/TipoSanguineo";
+import Pessoa from "./pages/Pessoa";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/cadastro/local-coleta" element={<LocalColeta />} />
           <Route path="/cadastro/tipo-sanguineo" element={<TipoSanguineo />} />
+          <Route path="/cadastro/pessoa" element={<Pessoa />} />
         </Routes>
       </BrowserRouter>
     </>
