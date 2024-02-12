@@ -1,19 +1,31 @@
 .container_header {
-    height: 100px;
-    background-color: aqua;
-    
-    .container_navigation {
-        height: 100%;
-        ul {
-            height: 100%;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
+  height: 100px;
+  background-color: rgb(36, 54, 134);
 
-        li {
-            list-style: none;
-        }
-
+  .container_navigation {
+    height: 100%;
+    ul {
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
     }
+
+    li {
+      a {
+        padding: 5px;
+        color: rgba(255, 255, 255, 0.548);
+      }
+
+      .active {
+        color: white;
+        border-bottom: 2px solid white;
+      }
+
+      font-size: 18px;
+      font-weight: bold;
+      text-transform: uppercase;
+      list-style: none;
+    }
+  }
 }

@@ -1,0 +1,40 @@
+.homeContainer {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .crudsContainer {
+    width: 800px;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    transition: filter 0.5s;
+
+    a {
+      color: rgb(255, 255, 255);
+    }
+
+    a:hover {
+      filter: brightness(0.85);
+    }
+
+    .crudsItem {
+      width: 220px;
+      height: 100px;
+      padding: 30px;
+      background-color: #4a4b77;
+      transition: filter 0.5s;
+      border-radius: 10px;
+      box-shadow: 2px 3px 10px #0000005d;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+    }
+  }
+}
