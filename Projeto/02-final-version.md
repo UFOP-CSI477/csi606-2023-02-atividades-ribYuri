@@ -9,6 +9,7 @@
 ### Resumo
 
   O projeto se trata de uma loja online, ou e-commerce de produtos.
+  Como tecnologias foram utilizadas o Java 17 e Spring Boot 3 para o desenvolvimento da API. Para o front foi utilizado o React.js
 
 ### 1. Funcionalidades implementadas
 Foram desenvolvidas todas as funcionalidades CRUD padrões e então o site (frontend) possui as seguintes features: 
