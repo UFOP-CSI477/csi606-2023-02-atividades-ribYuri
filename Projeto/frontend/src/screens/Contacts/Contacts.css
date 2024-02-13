@@ -1,0 +1,16 @@
+.contacts_container {
+    width: 100%;
+    height: 500px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contacts_container p {
+    width: 500px;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}

@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "189b0054-39ef-435f-95d1-388d974bb976",
+		"name": "FakeStoreSpring",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28783132"
+	},
+	"item": [
+		{
+			"name": "fakeStore",
+			"item": [
+				{
+					"name": "categories",
+					"item": [
+						{
+							"name": "index categories",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/products/categories"
+							},
+							"response": []
+						},
+						{
+							"name": "index all categories",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/products/categories/all"
+							},
+							"response": []
+						},
+						{
+							"name": "show category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/products/category/jewelery"
+							},
+							"response": []
+						},
+						{
+							"name": "update categorie",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"name\": \"modificaCategoria\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/products/category/jewelery"
+							},
+							"response": []
+						},
+						{
+							"name": "delete categorie",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "localhost:8080/api/products/category/novaCategoria"
+							},
+							"response": []
+						},
+						{
+							"name": "insert categories",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoidXNlcjEiLCJpYXQiOjE2ODM1NjY2NjUsImV4cCI6MTY4MzU2NjY5NX0.11thMUFpCsAP__FzV7Y58AqIwBO2o4-d2dqE2TowU70"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"novaCategoria\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/products/categories"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "products",
+					"item": [
+						{
+							"name": "index products",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/products"
+							},
+							"response": []
+						},
+						{
+							"name": "show products",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/products/20"
+							},
+							"response": []
+						},
+						{
+							"name": "search products",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/products/search?query=men",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"products",
+										"search"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "men"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update product",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"produto 4\",\r\n    \"price\": 109.95,\r\n    \"description\": \"Descrição qualquer\",\r\n    \"category_id\": 1,\r\n    \"image\": \"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg\",\r\n    \"rate\": 3.9,\r\n    \"count\": 120\r\n}\r\n// {\r\n// \"category\": \"jewelery\"\r\n// }\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/products/20"
+							},
+							"response": []
+						},
+						{
+							"name": "delete product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoidXNlcjEiLCJpYXQiOjE2ODM1NjY2NjUsImV4cCI6MTY4MzU2NjY5NX0.11thMUFpCsAP__FzV7Y58AqIwBO2o4-d2dqE2TowU70"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": "localhost:8080/api/products/21"
+							},
+							"response": []
+						},
+						{
+							"name": "insert products",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoidXNlcjEiLCJpYXQiOjE2ODM1NjMzMTAsImV4cCI6MTY4MzU2NjkxMH0.XgXBoliykJvylZ85ykwC9BDbCcPNGdWTKWhhmkjx0-Q"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Novo produto 45\",\r\n    \"price\": 109.95,\r\n    \"description\": \"Descrição qualquer\",\r\n    \"category_id\": 1,\r\n    \"image\": \"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg\",\r\n    \"rate\": 3.9,\r\n    \"count\": 120\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/products"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,58 @@
+.card_image {
+    margin-bottom: 12px;
+    border-radius: 12px;
+    object-fit: contain;
+}
+
+.image_size_normal {
+    width: 300px;
+    height: 350px;
+}
+
+.image_size_small {
+    width: 250px;
+    height: 300px;
+}
+
+.categories_image_size {
+    width: 352px;
+    height: 512px;
+}
+
+.card_title {
+    width: 100%;
+    white-space: nowrap;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card_description {
+    color: #1E1E1E80;
+}
+
+.title_marginB_normal {
+    margin-bottom: 8px;
+}
+.title_marginB_medium {
+    margin-bottom: 12px;
+}
+
+
+.normal_size {
+    width: 300px;
+}
+
+.small_size {
+    width: 250px;
+    height: 430px;
+}
+
+.categories_size {
+    width: 352px;
+}
+
+.card_label {
+    display: flex;
+    flex-direction: column;
+}

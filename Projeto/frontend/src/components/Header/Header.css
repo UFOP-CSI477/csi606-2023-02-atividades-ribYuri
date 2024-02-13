@@ -1,0 +1,52 @@
+.container_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #C1DCDC;
+    height: 120px;
+    padding: 54px 96px 38px;
+
+    gap: 40px;
+}
+
+.container_logo_pages {
+    display: flex;
+    gap: 105px;
+}
+
+.container_logo_pages .logo{
+    font-family: var(--font-logo);
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.container_logo_pages ul {
+    display: flex;
+    list-style: none;
+    gap: 48px;
+    font-size: 18px;
+}
+
+.container_logo_pages ul a {
+    text-decoration: none;
+    color: #1E1E1E80;
+}
+
+
+.container_logo_pages ul .active {
+    color: #1E1E1E;
+}
+
+.container_profile_cart {
+    display: flex;
+    gap: 50px;
+}
+
+.cart_icon {
+    font-size: 22px;
+}
+
+.person_icon {
+    font-size: 22px;
+}

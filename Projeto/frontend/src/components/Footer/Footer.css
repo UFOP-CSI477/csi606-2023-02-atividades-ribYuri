@@ -1,0 +1,72 @@
+.display_flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer {
+    height: 400px;
+    background: #C1DCDC;
+    padding: 48px 96px;
+
+    flex-direction: column;
+
+    color: #1E1E1E80;
+    font-size: 18px;
+}
+
+
+.container_footer button {
+    background-color: #C1DCDC;
+    border-radius: 50%;
+    border: 1px solid #1E1E1E80;
+    
+    width: 48px;
+    height: 48px;
+    
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+.container_footer button:hover {
+    filter: brightness(0.9);
+}
+
+.container_footer button .social_icon {
+    font-size: 20px;
+    color: #1e1e1eb7;
+}
+
+.container_footer .brand {
+    width: 192px;
+    height: 180px;
+    flex-direction: column;
+}
+
+.container_footer .brand h3 {
+    text-transform: uppercase;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 25px;
+    color: #000;
+}
+
+.container_infos {
+    display: flex;
+    gap: 50px;
+}
+
+.info_component {
+    height: 180px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.info_component h3 {
+    color: #1E1E1E;
+    font-weight: 700;
+}
+
+.info_component p {
+    color: #1E1E1E80;
+}

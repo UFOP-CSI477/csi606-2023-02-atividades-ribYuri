@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: fakeStoreApi
+  datasource:
+    url: jdbc:postgresql://localhost:5432/fakeStore
+    username: postgres
+    password: senha
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+
+flyway:
+  url: jdbc:postgresql://localhost:3306/fakeStore
+  schemas: fakeStore
+  user: postgres
+  password: senha
+  locations: classpath:/db/migration

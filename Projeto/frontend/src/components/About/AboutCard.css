@@ -1,0 +1,15 @@
+.aboutCard_icon {
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.aboutCard_title {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.aboutCard_description {
+    color: #1E1E1E80;
+    font-size: 18px;
+}

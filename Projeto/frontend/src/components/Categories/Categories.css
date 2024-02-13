@@ -1,0 +1,52 @@
+.categories_container {
+    padding: 85px 96px 54px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+}
+
+.categories_container button {
+    font-size: 18px;
+    padding: 12px 24px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background-color: #FFF;
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+    transition: filter 0.5s;
+}
+
+.categories_container button:hover{
+    filter: brightness(0.97);
+}
+
+.title_component {
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cards_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 96px;
+    margin-bottom: 40px;
+}
+
+.cards_container .categories_card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.categories_card .card_title {
+    margin-bottom: 12px;
+}
