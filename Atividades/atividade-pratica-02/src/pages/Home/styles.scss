@@ -14,8 +14,7 @@
     transition: filter 0.5s;
 
     a {
-      // color: rgb(255, 255, 255);
-      color: black;
+      color: white;
     }
 
     a:hover {
@@ -26,7 +25,7 @@
       width: 220px;
       height: 100px;
       padding: 30px;
-      background-color: #657fd388;
+      background-color: rgb(45 123 135);
       transition: filter 0.5s;
       border-radius: 10px;
       box-shadow: 2px 3px 10px #0000005d;

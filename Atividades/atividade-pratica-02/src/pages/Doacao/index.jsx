@@ -66,7 +66,7 @@ const Doacao = () => {
         <>
           <DoacaoForms
             handleSubmit={handleSubmit}
-            title={"Cadastro de Pessoa"}
+            title={"Cadastro de Doação"}
           />
           <ListDoacao updated={updated} onEdit={handleEditMode} />
         </>
