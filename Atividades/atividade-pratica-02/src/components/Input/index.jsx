@@ -11,7 +11,6 @@ const TextInput = ({
   readOnly,
   divClassname,
 }) => {
-  const id = Math.random();
   return (
     <div className={`TextInputContainer ${divClassname}`}>
       <input
